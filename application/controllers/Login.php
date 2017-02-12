@@ -19,23 +19,43 @@ class Login extends CI_Controller {
 	public function validasi() {
 
 		$this->load->model('user_m');
+		$this->load->model('master/mahasiswa_m');
+		$this->load->model('master/dosen_m');
 
 		$username = $this->input->post('username');	
 		$password = $this->input->post('password');	
 
 		$result = $this->user_m->login($username, $password);
-		// die_dump($result);
 
 		if (!empty($result)) {
 			
 			$set_session = array(
-				'user_id'    => $result->id,
+				'id'         => $result->id,
 				'user_name'  => $result->name,
 				'user_level' => $result->user_level_id,
 				'is_login'   => TRUE
 			);
-			
-			$this->session->set_userdata( $set_session );
+
+			// jika mahasiswa
+			if ($result->user_level_id == 3) {
+				
+				$data_user = $this->mahasiswa_m->get($result->user_id);
+				
+				$set_session['user_id'] = $data_user->id;
+				$set_session['nim']     = $data_user->nim;
+				$set_session['sks']     = $data_user->sks;
+			}
+
+			// jika dosen
+			if ($result->user_level_id == 2) {
+				
+				$data_user = $this->dosen_m->get($result->user_id);
+				
+				$set_session['user_id'] = $data_user->id;
+				$set_session['nid']     = $data_user->nid;
+			}
+
+			$this->session->set_userdata($set_session);
 		} 
 		else {
 	 		$this->session->set_flashdata('error', 'Username dan Password Salah!');
