@@ -23,7 +23,20 @@ class Prodi extends CI_Controller {
 			'menu_child'   => $this->menu_child,	
 			'header'       => 'Program Studi',
 			'header_child' => 'STMIK Bandung',
-			'view'         => 'master/prodi', 
+			'view'         => 'master/prodi/prodi', 
+		);
+
+ 		$this->load->view('layout', $data);
+	}
+
+	public function tambah()
+	{
+		$data = array(
+			'menu'         => $this->menu,
+			'menu_child'   => $this->menu_child,	
+			'header'       => 'Program Studi',
+			'header_child' => 'STMIK Bandung',
+			'view'         => 'master/prodi/add_prodi', 
 		);
 
  		$this->load->view('layout', $data);
