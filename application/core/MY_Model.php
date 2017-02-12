@@ -12,7 +12,7 @@ class MY_Model extends CI_Model {
 
 	public function get(){
 
-		return $this->db->get($this->table);
+		return $this->db->get($this->table)->row();
 	}
 
 	public function get_where($where){
