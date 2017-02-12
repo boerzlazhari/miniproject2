@@ -21,12 +21,24 @@ class Pengajuan_sk extends CI_Controller {
 			'menu_child'   => $this->menu_child,	
 			'header'       => 'Pengajuan',
 			'header_child' => 'Skripsi STMIK Bandung',
-			'view'         => 'kp/pengajuan', 
+			'view'         => 'sk/pengajuan', 
 		);
 
  		$this->load->view('layout', $data);
 	}
 
+	public function tambah()
+	{
+		$data = array(
+			'menu'           => $this->menu,
+			'menu_child'     => $this->menu_child,	
+			'header'         => 'Pengajuan',
+			'header_child'   => 'Tambah Pengajuan Skripsi',
+			'view'           => 'sk/tambah', 
+		);
+
+ 		$this->load->view('layout', $data);
+	}
 }
 
 /* End of file Pengajuan.php */

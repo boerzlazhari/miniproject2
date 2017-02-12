@@ -50,13 +50,5 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery 2.2.0 -->
-<script src="<?=base_url()?>assets/plugins/jQuery/jQuery-2.2.0.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="<?=base_url()?>assets/bootstrap/js/bootstrap.min.js"></script>
-<!-- AdminLTE App -->
-<script src="<?=base_url()?>assets/dist/js/app.min.js"></script>
-<!-- SlimScroll 1.3.0 -->
-<script src="<?=base_url()?>assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 </body>
 </html>

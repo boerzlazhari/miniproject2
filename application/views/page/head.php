@@ -4,6 +4,8 @@
   <title>Aplikasi Pengajuan Kerja Praktek dan Skripsi STMIK Bandung</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  
+  <!-- css -->
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="<?=base_url()?>assets/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
@@ -16,10 +18,19 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?=base_url()?>assets/dist/css/skins/_all-skins.min.css">
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="<?=base_url()?>assets/https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="<?=base_url()?>assets/https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="<?=base_url()?>assets/plugins/datepicker/datepicker3.css">
+
+
+  <!-- javascript -->
+  <!-- jQuery 2.2.0 -->
+  <script src="<?=base_url()?>assets/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+  <!-- Bootstrap 3.3.6 -->
+  <script src="<?=base_url()?>assets/bootstrap/js/bootstrap.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="<?=base_url()?>assets/dist/js/app.min.js"></script>
+  <!-- SlimScroll 1.3.0 -->
+  <script src="<?=base_url()?>assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+
+  <script src="<?=base_url()?>assets/plugins/datepicker/bootstrap-datepicker.js"></script>
+
 </head>
