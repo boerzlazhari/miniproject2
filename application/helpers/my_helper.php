@@ -32,3 +32,13 @@ if (!function_exists('die_dump')) {
         die(dump ($var, $label, $echo));
     }
 }
+
+if (!function_exists('create_folder')) {
+    function create_folder ($path)
+    {
+        if (!is_dir($path)) {
+            mkdir($path, 0777, true);
+        }
+    }
+}
+

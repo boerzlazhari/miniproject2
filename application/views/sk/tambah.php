@@ -28,20 +28,35 @@
 					<div class="form-group">
 						<label class="col-md-3 control-label">Upload Transkrip Nilai : </label>
 						<div class="col-md-4">
-							<input id="input-1" type="file" class="file">
+							<span class="btn btn-sm btn-default fileinput-button">
+						        <span>Choose File</span>
+						        <input id="fileupload_nilai" type="file" name="fileupload_nilai" multiple>
+						    </span>
+							<div id="files" class="files"></div>
+							<div id="progress" class="progress sm">
+						        <div class="progress-bar progress-bar-success"></div>
+						    </div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label">Upload Bukti Transfer : </label>
 						<div class="col-md-4">
-							<input id="input-1" type="file" class="file">
+							<span class="btn btn-sm btn-default fileinput-button">
+						        <span>Choose File</span>
+						        <input id="fileupload_transfer" type="file" name="fileupload_transfer" multiple>
+						    </span>
 						</div>
+						<!-- <div id="files" class="files"></div> -->
 					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label">Upload Proposal : </label>
 						<div class="col-md-4">
-							<input id="input-1" type="file" class="file">
+							<span class="btn btn-sm btn-default fileinput-button">
+						        <span>Choose File</span>
+						        <input id="fileupload_proposal" type="file" name="fileupload_proposal" multiple>
+						    </span>
 						</div>
+						<!-- <div id="files" class="files"></div> -->
 					</div>
 			</div>
 			<div class="box-footer text-right">
@@ -59,8 +74,38 @@
 </div>
 
 <script type="text/javascript">
+	
 	$('#datepicker').datepicker({
     	autoclose: true,
         format: "dd MM yyyy",                         
     });
+
+    $('#fileupload_nilai').fileupload({
+        url: 'do_upload/1',
+        dataType: 'json',
+        done: function (e, data) {
+        	console.log(data);
+            // $.each(data.result.upload_data, function (index, file) {
+                $('<p/>').text(data.result.upload_data.client_name).appendTo('#files');
+            // });
+        },
+        progressall: function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $('#progress .progress-bar').css(
+                'width',
+                progress + '%'
+            );
+        }
+    });
+
+    $('#fileupload_transfer').fileupload({
+        url: 'do_upload/2',
+        dataType: 'json',
+    });
+
+    $('#fileupload_proposal').fileupload({
+        url: 'do_upload/3',
+        dataType: 'json',
+    });
+
 </script>
