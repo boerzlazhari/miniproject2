@@ -54,7 +54,7 @@
           </ul>
         </li>
         <li class="header">KELUAR</li>
-        <li><a href="home/logout"><i class="fa fa-power-off"></i> <span>Keluar</span></a></li>
+        <li><a href="<?=base_url()?>home/logout"><i class="fa fa-power-off"></i> <span>Keluar</span></a></li>
         <!-- <li class="header">LABELS</li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
         <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>

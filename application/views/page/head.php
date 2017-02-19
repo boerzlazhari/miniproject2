@@ -22,6 +22,8 @@
 
   <link rel="stylesheet" href="<?=base_url()?>assets/plugins/jquery-file-upload/css/jquery.fileupload.css">
 
+   <link rel="stylesheet" href="<?=base_url()?>assets/plugins/datatables/dataTables.bootstrap.css"> <</-->
+
 
   <!-- javascript -->
   <!-- jQuery 2.2.0 -->
@@ -38,5 +40,11 @@
   <script src="<?=base_url()?>assets/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
 
   <script src="<?=base_url()?>assets/plugins/jquery-file-upload/js/jquery.fileupload.js"></script>
+
+  <script src="<?=base_url()?>assets/plugins/bootbox/bootbox.min.js"></script>
+
+  <script src="<?=base_url()?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
+  
+  <script src="<?=base_url()?>assets/plugins/datatables/dataTables.bootstrap.js"></script>
 
 </head>

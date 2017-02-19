@@ -10,14 +10,25 @@ class MY_Model extends CI_Model {
 		parent::__construct();
 	}
 
-	public function get(){
+	public function get($id = null){
 
-		return $this->db->get($this->table)->row();
+		if ($id != null) {
+			$this->db->where('id', $id);
+			return $this->db->get($this->table)->row();
+		}else {
+			return $this->db->get($this->table)->result();
+		}
 	}
 
-	public function get_where($where){
+	public function get_where($where, $single = null){
 
-		return $this->get_where($this->table, $where);
+		$this->db->where($where);
+		
+		if ($single != null) {
+			return $this->db->get($this->table)->row();
+		} else {
+			return $this->db->get($this->table)->result();
+		}
 	}
 
 	public function insert($data)
