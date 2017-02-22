@@ -37,7 +37,7 @@ class Login extends CI_Controller {
 			);
 
 			// jika mahasiswa
-			if ($result->user_level_id == 3) {
+			if ($result->user_level_id == 7) {
 				
 				$data_user = $this->mahasiswa_m->get($result->user_id);
 				
@@ -47,7 +47,7 @@ class Login extends CI_Controller {
 			}
 
 			// jika dosen
-			if ($result->user_level_id == 2) {
+			if ($result->user_level_id != 7) {
 				
 				$data_user = $this->dosen_m->get($result->user_id);
 				

@@ -22,7 +22,7 @@
 
   <link rel="stylesheet" href="<?=base_url()?>assets/plugins/jquery-file-upload/css/jquery.fileupload.css">
 
-   <link rel="stylesheet" href="<?=base_url()?>assets/plugins/datatables/dataTables.bootstrap.css"> <</-->
+  <link rel="stylesheet" href="<?=base_url()?>assets/plugins/datatables/dataTables.bootstrap.css">
 
 
   <!-- javascript -->

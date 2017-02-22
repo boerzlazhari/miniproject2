@@ -33,11 +33,7 @@
           </a>
           <ul class="treeview-menu">
             <li class="<?=($menu == 3 && $menu_child == 1) ? 'active' : ''?>"><a href="<?=base_url()?>skripsi/pengajuan_sk"><i class="fa fa-circle-o"></i> Pengajuan</a></li>
-            <li class="<?=($menu == 3 && $menu_child == 2) ? 'active' : ''?>"><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-            <li class="<?=($menu == 3 && $menu_child == 3) ? 'active' : ''?>"><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-            <li class="<?=($menu == 3 && $menu_child == 4) ? 'active' : ''?>"><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-            <li class="<?=($menu == 3 && $menu_child == 5) ? 'active' : ''?>"><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-            <li class="<?=($menu == 3 && $menu_child == 6) ? 'active' : ''?>"><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+            <li class="<?=($menu == 3 && $menu_child == 2) ? 'active' : ''?>"><a href="<?=base_url()?>skripsi/daftar_pengajuan_sk"><i class="fa fa-circle-o"></i> Daftar Pengajuan</a></li>
           </ul>
         </li>
         <li class="treeview <?=($menu == 4) ? 'active' : ''?>">

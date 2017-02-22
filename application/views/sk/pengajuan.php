@@ -23,7 +23,7 @@
 				<thead>
 					<tr>
 						<th width="4%" class="text-center">#</th>
-						<th class="text-center">Tanggal Pengajuan</th>
+						<th width="12%" class="text-center">Tanggal Pengajuan</th>
 						<th width="50%" class="text-center">Judul Skripsi</th>
 						<th width="10%" class="text-center">Status</th>
 					</tr>

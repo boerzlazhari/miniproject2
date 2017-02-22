@@ -20,6 +20,7 @@ class Pengajuan_sk extends CI_Controller {
 	public function index()
 	{
 		$data_pengajuan = $this->sk_pengajuan_m->get_where(array('mahasiswa_id' => $this->session->userdata('user_id')));
+		die_dump($this->session->userdata());
 		$data = array(
 			'menu'           => $this->menu,
 			'menu_child'     => $this->menu_child,	
