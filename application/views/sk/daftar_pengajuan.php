@@ -24,12 +24,12 @@
 						
 						<?php foreach ($data_pengajuan as $data): ?>
 							<tr>
-								<td class="text-center"><?=$data->id?></td>
-								<td class="text-center"><?=$data->nim?></td>
-								<td class="text-left"><?=$data->nama?></td>
-								<td><?=$data->judul?></td>
+								<td class="text-center"><?=$data['id']?></td>
+								<td class="text-center"><?=$data['nim']?></td>
+								<td class="text-left"><?=$data['nama']?></td>
+								<td><?=$data['judul']?></td>
 								<td class="text-center">
-									<a href="<?=base_url()?>skripsi/daftar_pengajuan_sk/proses/<?=$data->id?>" title="Proses" class="btn btn-xs btn-success"><i class="fa fa-gears"></i></a>
+									<a href="<?=base_url()?>skripsi/daftar_pengajuan_sk/proses/<?=$data['id']?>" title="Proses" class="btn btn-xs btn-success"><i class="fa fa-gears"></i></a>
 
 								</td>
 							</tr>

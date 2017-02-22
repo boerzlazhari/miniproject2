@@ -18,8 +18,20 @@ class Daftar_pengajuan_sk extends CI_Controller {
 	}
 
 	public function index()
-	{
-		$data_pengajuan = $this->sk_pengajuan_m->get_data_pengajuan();
+	{	
+		if ($this->session->userdata('user_level') == 5) {
+			$data_pengajuan = $this->sk_pengajuan_m->get_data_pengajuan(1);
+		}
+		elseif ($this->session->userdata('user_level') == 4) {
+			$data_pengajuan = $this->sk_pengajuan_m->get_data_pengajuan(2);
+		}
+		elseif ($this->session->userdata('user_level') == 2) {
+			$data_pengajuan = $this->sk_pengajuan_m->get_data_pengajuan(3);
+		}
+		else {
+			$data_pengajuan = array();
+		}
+
 		$data = array(
 			'menu'           => $this->menu,
 			'menu_child'     => $this->menu_child,	

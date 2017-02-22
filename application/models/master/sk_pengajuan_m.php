@@ -17,9 +17,9 @@ class Sk_pengajuan_m extends MY_Model {
 				FROM
 					sk_pengajuan skp
 				LEFT JOIN mahasiswa m ON m.id = skp.mahasiswa_id 
-				WHERE skp.status = 1 ";
+				WHERE skp.status = 1";
 
-		return $this->db->query($sql)->result();
+		return $this->db->query($sql)->result_array();
 	}
 
 	public function get_data_pengajuan_mhs($id)

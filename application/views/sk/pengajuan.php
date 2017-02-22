@@ -34,17 +34,21 @@
 						
 						<?php foreach ($data_pengajuan as $data): ?>
 							<tr>
-								<td class="text-center"><?=$data->id?></td>
-								<td class="text-center"><?=date('d F Y', strtotime($data->tanggal_pengajuan))?></td>
-								<td><?=$data->judul?></td>
+								<td class="text-center"><?=$data['id']?></td>
+								<td class="text-center"><?=date('d F Y', strtotime($data['tanggal_pengajuan']))?></td>
+								<td><?=$data['judul']?></td>
 								<td class="text-center">
 
-									<?php if ($data->status == 1): ?>
-										<span class="badge bg-yellow">Menunggu Persetujuan</span>	
-									<?php elseif($data->status == 2): ?>
-										<span class="badge bg-green">Disetujui</span>	
-									<?php elseif($data->status == 3): ?>
-										<span class="badge bg-red">Ditolak</span>	
+									<?php if ($data['status'] == 1): ?>
+										<span class="badge bg-yellow">Persetujuan Dosen Wali</span>	
+									<?php elseif($data['status'] == 2): ?>
+										<span class="badge bg-yellow">Persetujuan BAAK</span>	
+									<?php elseif($data['status'] == 3): ?>
+										<span class="badge bg-yellow">Persetujuan Ketua Program Studi</span>	
+									<?php elseif($data['status'] == 4): ?>
+										<span class="badge bg-green">Disetuji</span>	
+									<?php elseif($data['status'] == 5): ?>
+										<span class="badge bg-yellow">Ditolak</span>	
 									<?php endif ?>
 
 								</td>

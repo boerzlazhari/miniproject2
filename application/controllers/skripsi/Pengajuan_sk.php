@@ -20,14 +20,13 @@ class Pengajuan_sk extends CI_Controller {
 	public function index()
 	{
 		$data_pengajuan = $this->sk_pengajuan_m->get_where(array('mahasiswa_id' => $this->session->userdata('user_id')));
-		die_dump($this->session->userdata());
 		$data = array(
 			'menu'           => $this->menu,
 			'menu_child'     => $this->menu_child,	
 			'header'         => 'Pengajuan',
 			'header_child'   => 'Skripsi STMIK Bandung',
 			'view'           => 'sk/pengajuan', 
-			'data_pengajuan' => $data_pengajuan
+			'data_pengajuan' => object_to_array($data_pengajuan)
 		);
 
  		$this->load->view('layout', $data);

@@ -28,6 +28,12 @@
 					</div>
 				</div>
 				<div class="form-group">
+					<label class="col-md-3 control-label">Total SKS : </label>
+					<div class="col-md-3">
+						<label class="control-label"><?=$this->session->userdata('sks')?></label>
+					</div>
+				</div>
+				<div class="form-group">
 					<label class="col-md-3 control-label">Transkrip Nilai : </label>
 					<div class="col-md-4">
 						<div class="input-group">
@@ -60,6 +66,8 @@
 						</div>
 					</div>
 				</div>
+
+				<?php if ($this->session->userdata('user_level') == 2): ?>
 				<div class="form-group">
 					<label class="col-md-3 control-label">Tanggal Wawancara : </label>
 					<div class="col-md-3">
@@ -71,6 +79,7 @@
 		                </div>
 					</div>
 				</div>
+				<?php endif ?>
 			</div>
 			<div class="box-footer text-right">
 		      	<a href="javascript:history.go(-1);" class="btn btn-default btn-md">

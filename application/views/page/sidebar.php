@@ -8,7 +8,7 @@
         </div>
         <div class="pull-left info">
           <p><?=$this->session->userdata('user_name')?></p>
-          <a href="#">Administrator STMIK Bandung</a>
+          <a href="#"><?=$this->session->userdata('user_level_name')?></a>
         </div>
       </div>
       
