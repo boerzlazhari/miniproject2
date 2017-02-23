@@ -10,14 +10,17 @@ class Sk_pengajuan_m extends MY_Model {
 		parent::__construct();
 	}
 
-	public function get_data_pengajuan()
+	public function get_data_pengajuan($status)
 	{
+		$status = $status;
 		$sql = "SELECT
-					skp.id , skp.judul , skp.transkrip_nilai , skp.bukti_bayar , skp.proposal , m.nim , m.nama
+					skp.id , skp.judul , skp.tanggal_pengajuan , skp.tanggal_wawancara , skp.transkrip_nilai , skp.bukti_bayar , skp.proposal , skp.status, m.nim , m.nama,
+					d.nama AS pembimbing
 				FROM
 					sk_pengajuan skp
 				LEFT JOIN mahasiswa m ON m.id = skp.mahasiswa_id 
-				WHERE skp.status = 1";
+				LEFT JOIN dosen d ON d.id = skp.dosen_id
+				WHERE skp.status IN (".implode(",",$status).") ";
 
 		return $this->db->query($sql)->result_array();
 	}
@@ -25,11 +28,11 @@ class Sk_pengajuan_m extends MY_Model {
 	public function get_data_pengajuan_mhs($id)
 	{
 		$sql = "SELECT
-					skp.id , skp.judul , skp.transkrip_nilai , skp.bukti_bayar , skp.proposal , m.nim , m.nama, m.id AS mhs_id
+					skp.id , skp.judul, skp.tanggal_pengajuan, skp.tanggal_wawancara , skp.dosen_id, skp.transkrip_nilai , skp.bukti_bayar , skp.proposal , m.nim , m.nama, m.id AS mhs_id, m.sks
 				FROM
 					sk_pengajuan skp
 				LEFT JOIN mahasiswa m ON m.id = skp.mahasiswa_id 
-				WHERE skp.status = 1 AND skp.id = $id ";
+				WHERE skp.id = $id ";
 
 		return $this->db->query($sql)->row();
 	}

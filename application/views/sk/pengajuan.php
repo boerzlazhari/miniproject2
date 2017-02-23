@@ -26,6 +26,7 @@
 						<th width="12%" class="text-center">Tanggal Pengajuan</th>
 						<th width="50%" class="text-center">Judul Skripsi</th>
 						<th width="10%" class="text-center">Status</th>
+						<th width="15%" class="text-center">Tanggal Wawancara</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -46,12 +47,15 @@
 									<?php elseif($data['status'] == 3): ?>
 										<span class="badge bg-yellow">Persetujuan Ketua Program Studi</span>	
 									<?php elseif($data['status'] == 4): ?>
-										<span class="badge bg-green">Disetuji</span>	
+										<span class="badge bg-blue">Proses Wawancara</span>	
 									<?php elseif($data['status'] == 5): ?>
-										<span class="badge bg-yellow">Ditolak</span>	
+										<span class="badge bg-green">Disetujui</span>	
+									<?php elseif($data['status'] == 6): ?>
+										<span class="badge bg-red">Ditolak</span>	
 									<?php endif ?>
 
 								</td>
+								<td class="text-center"> <?=($data['tanggal_wawancara']) ? date('d F Y', strtotime($data['tanggal_wawancara'])) : '-'?> </td>
 							</tr>
 						<?php endforeach ?>
 					
