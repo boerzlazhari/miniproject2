@@ -19,7 +19,6 @@
 						<th width="12%" class="text-center">Nama</th>
 						<th width="50%" class="text-center">Judul Skripsi</th>
 						<th width="15%" class="text-center">Tanggal Pengajuan</th>
-						<th width="15%" class="text-center">Tanggal Wawancara</th>
 						<th width="15%" class="text-center">Pembimbing</th>
 						<th width="15%" class="text-center">Status</th>
 						<th width="10%" class="text-center">Action</th>
@@ -35,7 +34,6 @@
 								<td class="text-left"><?=$data['nama']?></td>
 								<td><?=$data['judul']?></td>
 								<td class="text-center"> <?=($data['tanggal_pengajuan']) ? date('d F Y', strtotime($data['tanggal_pengajuan'])) : '-'?> </td>
-								<td class="text-center"> <?=($data['tanggal_wawancara']) ? date('d F Y', strtotime($data['tanggal_wawancara'])) : '-'?> </td>
 								<td> <?=($data['pembimbing']) ? $data['pembimbing'] : '-' ?> </td>
 								<td class="text-center">
 									<?php if ($data['status'] == 1): ?>
@@ -58,7 +56,7 @@
 									<!-- <a href="<?=base_url()?>skripsi/daftar_pengajuan_sk/proses/<?=$data['id']?>/1" title="Edit" class="btn btn-xs btn-warning"><i class="fa fa-edit"></i></a> -->
 									<?php endif ?>
 
-									<a href="<?=base_url()?>skripsi/daftar_pengajuan_sk/proses/<?=$data['id']?>" title="Proses/Edit" class="btn btn-xs btn-success"><i class="fa fa-gears"></i></a>
+									<a href="<?=base_url()?>skripsi/daftar_pengajuan_prasidang/proses/<?=$data['id']?>" title="Proses/Edit" class="btn btn-xs btn-success"><i class="fa fa-gears"></i></a>
 								</td>
 							</tr>
 						<?php endforeach ?>

@@ -4,15 +4,19 @@
 	<div class="alert alert-success alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>Data berhasil disimpan</div>
 	<?php endif ?>		
 
+	<?php if (empty($status_pengajuan)): ?>
+	<div class="alert alert-danger alert-dismissible">Anda belum dapat melakukan pendaftaran pra sidang silahkan hubungi dosen wali atau ketua program studi.</div>
+	<?php endif ?>
+
 	<div class="box box-primary">
 		<div class="box-header with-border">
-		    <h3 class="box-title">Pengajuan Skripsi</h3>
+		    <h3 class="box-title">Pendaftaran Pra Sidang</h3>
 		    <div class="box-tools pull-right">
 
-		    	<?php if (empty($data_pengajuan)): ?>
-		      	<a href="pengajuan_sk/tambah" class="btn btn-default btn-sm">
+		    	<?php if (empty($data_pengajuan) && !empty($status_pengajuan)): ?>
+		      	<a href="pengajuan_prasidang/tambah" class="btn btn-default btn-sm">
 		      		<i class="fa fa-plus"></i>
-		      		Tambah Pengajuan
+		      		Pendaftaran Pra Sidang
 		      	</a>
 		    	<?php endif ?>
 
@@ -24,8 +28,9 @@
 					<tr>
 						<th width="12%" class="text-center">Tanggal Pengajuan</th>
 						<th width="50%" class="text-center">Judul Skripsi</th>
+						<th width="10%" class="text-center">Pembimbing</th>
+						<th width="30%" class="text-center">Keterangan</th>
 						<th width="10%" class="text-center">Status</th>
-						<th width="15%" class="text-center">Tanggal Wawancara</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -36,24 +41,23 @@
 							<tr>
 								<td class="text-center"><?=date('d F Y', strtotime($data['tanggal_pengajuan']))?></td>
 								<td><?=$data['judul']?></td>
+								<td><?=$data['pembimbing']?></td>
+								<td><?=$data['notes']?></td>
 								<td class="text-center">
 
 									<?php if ($data['status'] == 1): ?>
-										<span class="badge bg-yellow">Persetujuan Dosen Wali</span>	
+										<span class="badge bg-yellow">Persetujuan Pembimbing</span>	
 									<?php elseif($data['status'] == 2): ?>
-										<span class="badge bg-yellow">Persetujuan BAAK</span>	
+										<span class="badge bg-yellow">Persetujuan BAU</span>	
 									<?php elseif($data['status'] == 3): ?>
 										<span class="badge bg-yellow">Persetujuan Ketua Program Studi</span>	
 									<?php elseif($data['status'] == 4): ?>
-										<span class="badge bg-blue">Proses Wawancara</span>	
-									<?php elseif($data['status'] == 5): ?>
 										<span class="badge bg-green">Disetujui</span>	
-									<?php elseif($data['status'] == 6): ?>
+									<?php elseif($data['status'] == 5): ?>
 										<span class="badge bg-red">Ditolak</span>	
 									<?php endif ?>
 
 								</td>
-								<td class="text-center"> <?=($data['tanggal_wawancara']) ? date('d F Y', strtotime($data['tanggal_wawancara'])) : '-'?> </td>
 							</tr>
 						<?php endforeach ?>
 					
