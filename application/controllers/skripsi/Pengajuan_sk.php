@@ -39,8 +39,8 @@ class Pengajuan_sk extends CI_Controller {
 			'menu'         => $this->menu,
 			'menu_child'   => $this->menu_child,	
 			'header'       => 'Pengajuan',
-			'header_child' => 'Tambah Pengajuan Skripsi',
-			'view'         => 'sk/tambah', 
+			'header_child' => 'Tambah Pengajuan Kerja Praktek',
+			'view'         => 'kp/tambah', 
 			'sks'          => $mahasiswa->sks
 		);
 
