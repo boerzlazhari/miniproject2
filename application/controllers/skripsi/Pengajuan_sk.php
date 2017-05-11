@@ -26,7 +26,7 @@ class Pengajuan_sk extends CI_Controller {
 			'header'         => 'Pengajuan',
 			'header_child'   => 'Skripsi STMIK Bandung',
 			'view'           => 'sk/pengajuan', 
-			'data_pengajuan' => $data_pengajuan
+			'data_pengajuan' => object_to_array($data_pengajuan)
 		);
 
  		$this->load->view('layout', $data);

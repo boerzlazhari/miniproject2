@@ -37,22 +37,39 @@ class Login extends CI_Controller {
 			);
 
 			// jika mahasiswa
-			if ($result->user_level_id == 3) {
+			if ($result->user_level_id == 7) {
 				
 				$data_user = $this->mahasiswa_m->get($result->user_id);
 				
-				$set_session['user_id'] = $data_user->id;
-				$set_session['nim']     = $data_user->nim;
-				$set_session['sks']     = $data_user->sks;
+				$set_session['user_id']         = $data_user->id;
+				$set_session['nim']             = $data_user->nim;
+				$set_session['sks']             = $data_user->sks;
+				$set_session['user_level_name'] = 'Mahasiswa';
 			}
 
 			// jika dosen
-			if ($result->user_level_id == 2) {
+			if ($result->user_level_id != 7 && $result->user_level_id != 1) {
 				
+				switch ($result->user_level_id) {
+					case 2:
+						$user_level_name = 'Ketua Program Studi'; break;
+					case 3:
+						$user_level_name = 'Staff BAU'; break;
+					case 4:
+						$user_level_name = 'Staff BAAK'; break;
+					case 5:
+						$user_level_name = 'Dosen'; break;
+					case 6:
+						$user_level_name = 'Staff Perpustakaan'; break;
+					default:
+						$user_level_name = ''; break;
+				}
+
 				$data_user = $this->dosen_m->get($result->user_id);
 				
-				$set_session['user_id'] = $data_user->id;
-				$set_session['nid']     = $data_user->nid;
+				$set_session['user_id']         = $data_user->id;
+				$set_session['nid']             = $data_user->nid;
+				$set_session['user_level_name'] = $user_level_name;
 			}
 
 			$this->session->set_userdata($set_session);

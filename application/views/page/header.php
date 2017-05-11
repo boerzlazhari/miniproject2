@@ -74,7 +74,7 @@
 
                 <p>
                   <?=$this->session->userdata('user_name')?>
-                  <small>Administrator STMIK Bandung</small>
+                  <small><?=$this->session->userdata('user_level_name')?></small>
                 </p>
               </li>
               
