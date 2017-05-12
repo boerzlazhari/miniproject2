@@ -27,6 +27,17 @@ class Home extends CI_Controller {
  		$this->load->view('layout', $data);
 	}
 
+	public function print_berita_acara_kp()
+	{
+        include('mpdf/mpdf.php');
+
+        $data = array();
+
+        $mpdf=new mPDF('utf-8','', 0, '', 20, 20, 10, 0, 0, 0);
+        $mpdf->writeHTML($this->load->view('print/berita_acara_kp', $data, true));
+        $mpdf->Output('print.pdf', 'I'); 
+	}
+
 	public function logout()
 	{
 		$this->session->sess_destroy();
