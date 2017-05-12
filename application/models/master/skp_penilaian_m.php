@@ -23,7 +23,8 @@ class Skp_penilaian_m extends MY_Model {
 			JOIN kp_pengajuan ON kp_pengajuan.id = skp_penilaian.kp_id
 			JOIN mahasiswa ON kp_pengajuan.mahasiswa_id = mahasiswa.id
 			WHERE
-				skp_penilaian.dosen_id = $dosen_id";
+				skp_penilaian.dosen_id = $dosen_id
+				AND skp_penilaian.status_penilaian = 1";
 
 		return $this->db->query($sql)->result();
 	}	
