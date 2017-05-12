@@ -23,7 +23,7 @@
           <ul class="treeview-menu">
             <li class="<?=($menu == 2 && $menu_child == 1) ? 'active' : ''?>"><a href="<?=base_url()?>kerja_praktek/pengajuan_kp"><i class="fa fa-circle-o"></i>Pengajuan</a></li>
             <li class="<?=($menu == 2 && $menu_child == 2) ? 'active' : ''?>"><a href="<?=base_url()?>kerja_praktek/bimbingan_kp"><i class="fa fa-circle-o"></i>Bimbingan</a></li>
-            <li class="<?=($menu == 2 && $menu_child == 3) ? 'active' : ''?>"><a href="<?=base_url()?>kerja_praktek/daftar_sidang_kp"><i class="fa fa-circle-o"></i>Pendaftaran Sidang</a></li>
+            <li class="<?=($menu == 2 && $menu_child == 3) ? 'active' : ''?> <?=($this->session->userdata('user_level') < 7) ? '' : 'hidden' ?>"><a href="<?=base_url()?>kerja_praktek/daftar_sidang_kp"><i class="fa fa-circle-o"></i>Pendaftaran Sidang</a></li>
             <li class="<?=($menu == 2 && $menu_child == 4) ? 'active' : ''?> <?=($this->session->userdata('user_level') < 7) ? '' : 'hidden' ?>"><a href="<?=base_url()?>kerja_praktek/penilaian_kp"><i class="fa fa-circle-o"></i>Penilaian</a></li>
           </ul>
         </li>
