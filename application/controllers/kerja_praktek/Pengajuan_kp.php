@@ -2,7 +2,7 @@
 
 class Pengajuan_kp extends CI_Controller {
 
-	public $menu       = 3;
+	public $menu       = 2;
 	public $menu_child = 1;
 
 	public function __construct()
@@ -23,8 +23,8 @@ class Pengajuan_kp extends CI_Controller {
 		// die_dump($this->session->userdata('user_level'));
 		$count = 0;
 		if($this->session->userdata('user_level') == 7){
-			$data_pengajuan = $this->kp_pengajuan_m->get_where(array('mahasiswa_id' => $this->session->userdata('id')));
-			$count_data_reject = $this->kp_pengajuan_m->get_pengajuan($this->session->userdata('id'));
+			$data_pengajuan = $this->kp_pengajuan_m->get_where(array('mahasiswa_id' => $this->session->userdata('user_id')));
+			$count_data_reject = $this->kp_pengajuan_m->get_pengajuan($this->session->userdata('user_id'));
 
 			$count = $count_data_reject[0]->jumlah;
 			// die_dump($count_data_reject);
@@ -54,8 +54,9 @@ class Pengajuan_kp extends CI_Controller {
 		$mahasiswa->sks = 0;
 		if($this->session->userdata('user_level') == 7)
 		{
-			$mahasiswa = $this->mahasiswa_m->get($this->session->userdata('id'));
+			$mahasiswa = $this->mahasiswa_m->get($this->session->userdata('user_id'));
 		}
+
 		$data = array(
 			'menu'         => $this->menu,
 			'menu_child'   => $this->menu_child,	
@@ -94,7 +95,7 @@ class Pengajuan_kp extends CI_Controller {
 		$array_post = $this->input->post();
 
 		$data = array(
-			'mahasiswa_id'      => $this->session->userdata('id'),
+			'mahasiswa_id'      => $this->session->userdata('user_id'),
 			'tanggal_pengajuan' => date('Y-m-d', strtotime($array_post['tgl_pengajuan'])),
 			'nama_tempat'       => $array_post['tempat'],
 			'judul'             => $array_post['judul'],

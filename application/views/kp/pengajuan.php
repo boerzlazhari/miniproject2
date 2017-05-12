@@ -57,7 +57,7 @@
 								</td>
 
 								<?php if($user_level != 5): ?>
-								<td class="text-center"><a href="proses/<?=$data->id?>" class="btn btn-success btn-xs btn-simpan"><i class="fa fa-edit"></i></a></td>
+								<td class="text-center"><a href="pengajuan_kp/proses/<?=$data->id?>" class="btn btn-success btn-xs btn-simpan"><i class="fa fa-edit"></i></a></td>
 								<?php endif ?>
 							</tr>
 							<?php $i++?>
