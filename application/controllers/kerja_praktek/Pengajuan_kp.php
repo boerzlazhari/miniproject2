@@ -22,7 +22,7 @@ class Pengajuan_kp extends CI_Controller {
 	{
 		// die_dump($this->session->userdata('user_level'));
 		$count = 0;
-		if($this->session->userdata('user_level') == 5){
+		if($this->session->userdata('user_level') == 7){
 			$data_pengajuan = $this->kp_pengajuan_m->get_where(array('mahasiswa_id' => $this->session->userdata('id')));
 			$count_data_reject = $this->kp_pengajuan_m->get_pengajuan($this->session->userdata('id'));
 
@@ -52,7 +52,7 @@ class Pengajuan_kp extends CI_Controller {
 	{
 		$mahasiswa = new stdClass;
 		$mahasiswa->sks = 0;
-		if($this->session->userdata('user_level') == 5)
+		if($this->session->userdata('user_level') == 7)
 		{
 			$mahasiswa = $this->mahasiswa_m->get($this->session->userdata('id'));
 		}

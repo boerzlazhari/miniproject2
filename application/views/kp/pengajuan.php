@@ -9,7 +9,7 @@
 		    <h3 class="box-title">Daftar Pengajuan Kerja Praktek</h3>
 		    <div class="box-tools pull-right">
 
-		    	<?php if (empty($data_pengajuan) || !empty($data_pengajuan) && $count == 0): ?>
+		    	<?php if (empty($data_pengajuan) && $count == 0 || !empty($data_pengajuan) && $count == 0): ?>
 		      	<a href="pengajuan_kp/tambah" class="btn btn-default btn-sm">
 		      		<i class="fa fa-plus"></i>
 		      		Tambah Pengajuan

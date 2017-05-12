@@ -162,7 +162,7 @@
 		            url      : base_url + 'approved',
 		            data     : {id : $('#id').val(), dosen_id : $("#dosen option:selected").val()},
 		            success : function(){
-		            	// $('.btn-close').click();
+		            	$('.btn-close').click();
 		            	window.location.replace(base_url);
 		            }
 		        });
