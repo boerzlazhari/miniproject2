@@ -21,8 +21,10 @@
             <i class="fa fa-suitcase"></i> <span>Kerja Praktek</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li class="<?=($menu == 2 && $menu_child == 1) ? 'active' : ''?>"><a href="pengajuan"><i class="fa fa-circle-o"></i>Pengajuan</a></li>
-            <li class="<?=($menu == 2 && $menu_child == 2) ? 'active' : ''?>"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+            <li class="<?=($menu == 2 && $menu_child == 1) ? 'active' : ''?>"><a href="<?=base_url()?>kerja_praktek/pengajuan_kp"><i class="fa fa-circle-o"></i>Pengajuan</a></li>
+            <li class="<?=($menu == 2 && $menu_child == 2) ? 'active' : ''?>"><a href="<?=base_url()?>kerja_praktek/bimbingan_kp"><i class="fa fa-circle-o"></i>Bimbingan</a></li>
+            <li class="<?=($menu == 2 && $menu_child == 3) ? 'active' : ''?>"><a href="<?=base_url()?>kerja_praktek/daftar_sidang_kp"><i class="fa fa-circle-o"></i>Pendaftaran Sidang</a></li>
+            <li class="<?=($menu == 2 && $menu_child == 4) ? 'active' : ''?> <?=($this->session->userdata('user_level') < 7) ? '' : 'hidden' ?>"><a href="<?=base_url()?>kerja_praktek/penilaian_kp"><i class="fa fa-circle-o"></i>Penilaian</a></li>
           </ul>
         </li>
         <li class="treeview <?=($menu == 3) ? 'active' : ''?>">
@@ -46,7 +48,7 @@
             <li class="<?=($menu == 3 && $menu_child == 6) ? 'active' : ''?> <?=($this->session->userdata('user_level') == 7) ? 'hidden' : '' ?>"><a href="<?=base_url()?>skripsi/daftar_pengajuan_sidang"><i class="fa fa-circle-o"></i> Daftar Pengajuan Sidang</a></li>
           </ul>
         </li>
-        <li class="treeview <?=($menu == 4) ? 'active' : ''?>">
+        <!-- <li class="treeview <?=($menu == 4) ? 'active' : ''?>">
           <a href="#">
             <i class="fa fa-gears"></i>
             <span>Master</span>
@@ -58,7 +60,7 @@
             <li class="<?=($menu == 4 && $menu_child == 3) ? 'active' : ''?>"><a href="<?=base_url()?>master/dosen"><i class="fa fa-circle-o"></i> Dosen</a></li>
             <li class="<?=($menu == 4 && $menu_child == 4) ? 'active' : ''?>"><a href="<?=base_url()?>master/kategori_nilai"><i class="fa fa-circle-o"></i> Kategori Penilaian</a></li>
           </ul>
-        </li>
+        </li> -->
         <li class="header">KELUAR</li>
         <li><a href="<?=base_url()?>home/logout"><i class="fa fa-power-off"></i> <span>Keluar</span></a></li>
         <!-- <li class="header">LABELS</li>

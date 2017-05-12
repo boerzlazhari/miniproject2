@@ -19,9 +19,9 @@ class Home extends CI_Controller {
 		$data = array(
 			'menu'         => $this->menu,
 			'menu_child'   => $this->menu_child,	
-			'header'       => 'Pengajuan',
-			'header_child' => 'Kerja Praktek STMIK Bandung',
-			'view'         => 'kp/pengajuan', 
+			'header'       => 'Dashboard',
+			'header_child' => 'Pengajuan Kerja Praktek dan Skripsi STMIK Bandung',
+			'view'         => '', 
 		);
 
  		$this->load->view('layout', $data);

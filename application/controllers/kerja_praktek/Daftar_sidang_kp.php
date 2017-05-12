@@ -2,8 +2,8 @@
 
 class Daftar_sidang_kp extends CI_Controller {
 
-	public $menu       = 1;
-	public $menu_child = 0;
+	public $menu       = 2;
+	public $menu_child = 3;
 
 	public function __construct()
 	{
