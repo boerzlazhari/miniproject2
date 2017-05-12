@@ -121,12 +121,16 @@ class Daftar_sidang_kp extends CI_Controller {
 		$data_nilai_1 = array(
 			'kp_id'		=> $array_post['kp_id'],
 			'dosen_id'	=> $array_post['dosen_1_id'],
+			'status_penguji'	=> 1
+			'status_penilaian'	=> 1
 		);
 		$skp_penilaian_id_1 = $this->skp_penilaian_m->insert($data_nilai_1);
 
 		$data_nilai_2 = array(
 			'kp_id'		=> $array_post['kp_id'],
 			'dosen_id'	=> $array_post['dosen_2_id'],
+			'status_penguji'	=> 2
+			'status_penilaian'	=> 1
 		);
 
 		$skp_penilaian_id_2 = $this->skp_penilaian_m->insert($data_nilai_2);
