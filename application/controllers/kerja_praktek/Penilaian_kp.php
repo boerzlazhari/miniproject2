@@ -73,26 +73,34 @@ class Penilaian_kp extends CI_Controller {
 	public function simpan()
 	{
 		$array_post = $this->input->post();
-		die_dump($array_post);
-	
-		$status = 2;
 
-		$data = array(
-			'kp_id'	=> $array_post['kp_id'],
-			'notes'	=> $array_post['notes'],
-			'another_notes'	=> $array_post['another_notes'],
-			'status'	=> $status
+		$data_status = array(
+			'status_penilaian' => 2
 		);
 
-		$where = array(
-			'id'				=> $array_post['id']
+		$where1 = array(
+			'id'	=> $array_post['id']
 		);
 
-		$this->skp_pendaftaran_m->update($data, $where);
+		$this->skp_penilaian_m->update($data_status, $where1);
+
+
+		for ($i=1; $i < 11; $i++) { 
+
+			$data = array(
+				'nilai' => $array_post['nilai_'.$i]
+			);
+
+			$where = array(
+				'id'	=> $array_post['id_'.$i]
+			);
+
+			$this->skp_penilaian_detail_m->update($data, $where);
+		}
+
 		$this->session->set_flashdata('insert_success', '1');
-		redirect('kerja_praktek/Daftar_sidang_kp');
+		redirect('kerja_praktek/Penilaian_kp');
 	}
-
 }
 
 /* End of file Home.php */
